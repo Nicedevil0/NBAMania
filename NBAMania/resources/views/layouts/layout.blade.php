@@ -27,11 +27,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Joueurs</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Statistiques
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Stats des équipes</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Stats des joueurs</a></li>
+                            </ul>
+                            </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="container mx-auto my-4" style="width:80%">
         @yield('contenu')
+        </div>
         <footer class="bg-dark text-center text-white">
             <div class="container p-4 pb-0">
                 <section class="mb-4">
