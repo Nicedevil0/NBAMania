@@ -8,7 +8,7 @@
 <div class="text-center mb-4">
     <h1>Bienvenue sur NBA Mania !</h1>
 </div>
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+<div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -16,25 +16,30 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://www.fiba.basketball/api/img/graphic/c5132053-5932-4af1-9e9b-8597ed500e94/940/529" class="d-block mx-auto img-fluid">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Les équipes</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-            </div>
+            <a href="https://www.beinsports.com/france/nba/?gr=www">
+                <img src="images/nbacom.jpg" class="d-block mx-auto">
+                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0,0,0,0.9);">
+                    <h5>Site officiel de la NBA</h5>
+                </div>
+            </a>
         </div>
         <div class="carousel-item">
-            <img src="https://www.fiba.basketball/api/img/graphic/c5132053-5932-4af1-9e9b-8597ed500e94/940/529" class="d-block mx-auto img-fluid">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Les joueurs</h5>
-                <p>Some representative placeholder content for the second slide.</p>
-            </div>
+            <a href="{{ route('teams.index') }}">
+                <img src="images/teams.jpg" class="d-block mx-auto">
+                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0,0,0,0.9);">
+                    <h5>Les équipes</h5>
+                    <p>Venez voir les équipes de notre base de donnée.</p>
+                </div>
+            </a>
         </div>
         <div class="carousel-item">
-            <img src="https://www.fiba.basketball/api/img/graphic/c5132053-5932-4af1-9e9b-8597ed500e94/940/529" class="d-block mx-auto">
-             <div class="carousel-caption d-none d-md-block">
-                <h5>Les statistiques</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
+            <a href="https://www.beinsports.com/france/nba/?gr=www">
+                <img src="images/players.jpg" class="d-block mx-auto">
+                <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0,0,0,0.9);">
+                    <h5>Les joueurs</h5>
+                    <p>Venez voir les équipes de notre base de donnée.</p>
+                </div>
+            </a>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
