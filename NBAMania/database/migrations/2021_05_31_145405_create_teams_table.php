@@ -37,7 +37,6 @@ class CreateTeamsTable extends Migration
             $table->integer('GlobalTeamID')->nullable();
             $table->integer('NbaDotComTeamID')->nullable();
         });
-        DB::unprepared('ALTER TABLE `teams` DROP PRIMARY KEY, ADD PRIMARY KEY (  `id` ,  `restaurant_id` )');
     }
 
     /**

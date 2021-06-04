@@ -32,8 +32,4 @@ class Team extends Model
         'GlobalTeamID',
         'NbaDotComTeamID'
     ];
-
-    public function standings(){
-        return $this->belongsToMany(Standing::class);
-    }
 }
