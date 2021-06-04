@@ -16,8 +16,8 @@ class CreateStandingsTable extends Migration
         Schema::create('standings', function (Blueprint $table) {
             $table->id();
             $table->binary('SeasonType')->nullable();
-            $table->integer('TeamID');
-            $table->foreign('TeamID')
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')
                 ->references('id')
                 ->on('teams')
                 ->onDelete('cascade')
@@ -50,7 +50,7 @@ class CreateStandingsTable extends Migration
             $table->integer('DivisionRank')->nullable();
             $table->timestamps();
         });
-        DB::unprepared('ALTER TABLE `standings` DROP PRIMARY KEY, ADD PRIMARY KEY (  `id` ,  `TeamID` )');
+        DB::unprepared('ALTER TABLE `standings` DROP PRIMARY KEY, ADD PRIMARY KEY (  `id` ,  `team_id` )');
     }
 
     /**

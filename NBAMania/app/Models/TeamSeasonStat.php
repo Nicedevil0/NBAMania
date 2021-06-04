@@ -15,9 +15,9 @@ class TeamSeasonStat extends Model
      * @var array
      */
     protected $fillable = [
-        'TeamID',
+        'team_id',
         'SeasonType',
-        'Season',
+        'season_id',
         'Name',
         'Team',
         'Wins',
@@ -73,10 +73,10 @@ class TeamSeasonStat extends Model
         'IsClosed',
         'LineupConfirmed',
         'LineupStatus',
-        'OpponentStatStatID',
-        'OpponentStatTeamID',
+        'opponent_stat_stat_id',
+        'opponent_stat_team_id',
         'OpponentStatSeasonType',
-        'OpponentStatSeason',
+        'opponent_stat_season',
         'OpponentStatName',
         'OpponentStatTeam',
         'OpponentStatWins',

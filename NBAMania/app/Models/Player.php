@@ -17,7 +17,7 @@ class Player extends Model
     protected $fillable = [
         'SportsDataID',
         'Status',
-        'TeamID',
+        'team_id',
         'Team',
         'Jersey',
         'PositionCategory',

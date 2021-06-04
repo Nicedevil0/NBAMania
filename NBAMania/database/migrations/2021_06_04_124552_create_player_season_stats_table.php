@@ -15,21 +15,21 @@ class CreatePlayerSeasonStatsTable extends Migration
     {
         Schema::create('player_season_stats', function (Blueprint $table) {
             $table->id();
-            $table->integer('TeamID')->nullable();
-            $table->foreign('TeamID')
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->foreign('team_id')
                 ->references('id')
                 ->on('teams')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->integer('PlayerID')->nullable();
-            $table->foreign('PlayerID')
+            $table->unsignedBigInteger('player_id')->nullable();
+            $table->foreign('player_id')
                 ->references('id')
                 ->on('players')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->binary('SeasonType')->nullable();
-            $table->integer('Season');
-            $table->foreign('Season')
+            $table->unsignedBigInteger('season_id');
+            $table->foreign('season_id')
                 ->references('id')
                 ->on('seasons')
                 ->onDelete('cascade')

@@ -20,7 +20,7 @@ class Team extends Model
         'City',
         'Name',
         'LeagueID',
-        'StadiumID',
+        'stadium_id',
         'Conference',
         'Division',
         'PrimaryColor',

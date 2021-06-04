@@ -15,10 +15,10 @@ class PlayerSeasonStat extends Model
      * @var array
      */
     protected $fillable = [
-        'TeamID',
-        'PlayerID',
+        'team_id',
+        'player_id',
         'SeasonType',
-        'Season',
+        'season_id',
         'Name',
         'Team',
         'Position',

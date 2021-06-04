@@ -17,8 +17,8 @@ class CreatePlayersTable extends Migration
             $table->id();
             $table->text('SportsDataID')->nullable();
             $table->text('Status')->nullable();
-            $table->integer('TeamID')->nullable();
-            $table->foreign('TeamID')
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->foreign('team_id')
                 ->references('id')
                 ->on('teams')
                 ->onDelete('cascade')

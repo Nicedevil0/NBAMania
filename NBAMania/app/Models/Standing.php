@@ -16,8 +16,7 @@ class Standing extends Model
      */
     protected $fillable = [
         'SeasonType',
-        'TeamID',
-        'TeamID',
+        'team_id',
         'id',
         'teams',
         'cascade',

@@ -15,15 +15,15 @@ class CreateTeamSeasonStatsTable extends Migration
     {
         Schema::create('team_season_stats', function (Blueprint $table) {
             $table->id();
-            $table->integer('TeamID')->nullable();
-            $table->foreign('TeamID')
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->foreign('team_id')
                 ->references('id')
                 ->on('teams')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->binary('SeasonType')->nullable();
-            $table->integer('Season');
-            $table->foreign('Season')
+            $table->unsignedBigInteger('season_id');
+            $table->foreign('season_id')
                 ->references('id')
                 ->on('seasons')
                 ->onDelete('cascade')
@@ -83,10 +83,25 @@ class CreateTeamSeasonStatsTable extends Migration
             $table->text('IsClosed')->nullable();
             $table->text('LineupConfirmed')->nullable();
             $table->text('LineupStatus')->nullable();
-            $table->integer('OpponentStatStatID')->nullable();
-            $table->integer('OpponentStatTeamID')->nullable();
+            $table->unsignedBigInteger('opponent_stat_stat_id')->nullable();
+            $table->foreign('opponent_stat_stat_id')
+                ->references('id')
+                ->on('team_season_stats')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->unsignedBigInteger('opponent_stat_team_id')->nullable();
+            $table->foreign('opponent_stat_team_id')
+                ->references('id')
+                ->on('teams')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->binary('OpponentStatSeasonType')->nullable();
-            $table->integer('OpponentStatSeason')->nullable();
+            $table->unsignedBigInteger('opponent_stat_season_id')->nullable();
+            $table->foreign('opponent_stat_season_id')
+                ->references('id')
+                ->on('seasons')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->text('OpponentStatName')->nullable();
             $table->text('OpponentStatTeam')->nullable();
             $table->integer('OpponentStatWins')->nullable();
