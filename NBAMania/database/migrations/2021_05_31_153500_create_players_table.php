@@ -18,6 +18,11 @@ class CreatePlayersTable extends Migration
             $table->text('SportsDataID')->nullable();
             $table->text('Status')->nullable();
             $table->integer('TeamID')->nullable();
+            $table->foreign('TeamID')
+                ->references('id')
+                ->on('teams')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->text('Team')->nullable();
             $table->integer('Jersey')->nullable();
             $table->text('PositionCategory')->nullable();

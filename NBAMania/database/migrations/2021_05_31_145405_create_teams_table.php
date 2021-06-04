@@ -21,6 +21,11 @@ class CreateTeamsTable extends Migration
             $table->text('Name')->nullable();
             $table->integer('LeagueID')->nullable();
             $table->integer('StadiumID')->nullable();
+            $table->foreign('StadiumID')
+                ->references('id')
+                ->on('stadiums')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->text('Conference')->nullable();
             $table->text('Division')->nullable();
             $table->text('PrimaryColor')->nullable();
@@ -32,6 +37,7 @@ class CreateTeamsTable extends Migration
             $table->integer('GlobalTeamID')->nullable();
             $table->integer('NbaDotComTeamID')->nullable();
         });
+        DB::unprepared('ALTER TABLE `teams` DROP PRIMARY KEY, ADD PRIMARY KEY (  `id` ,  `restaurant_id` )');
     }
 
     /**
