@@ -20,7 +20,7 @@ class CreateTeamsTable extends Migration
             $table->text('City')->nullable();
             $table->text('Name')->nullable();
             $table->integer('LeagueID')->nullable();
-            $table->unsignedBigInteger('stadium_id');
+            $table->unsignedBigInteger('stadium_id')->nullable();
             $table->foreign('stadium_id')
                 ->references('id')
                 ->on('stadiums')
