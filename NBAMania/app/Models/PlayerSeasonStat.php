@@ -73,4 +73,16 @@ class PlayerSeasonStat extends Model
         'LineupConfirmed',
         'LineupStatus'
     ];
+
+    public function season(){
+        return $this->belongsTo(Season::class);
+    }
+
+    public function player(){
+        return $this->belongsTo(Player::class);
+    }
+
+    public function team(){
+        return $this->belongsTo(Team::class);
+    }
 }

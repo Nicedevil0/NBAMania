@@ -14,7 +14,8 @@ class StandingController extends Controller
      */
     public function index()
     {
-        //
+        $standings = Standing::all();
+        return view('standings', compact('standings'));
     }
 
     /**

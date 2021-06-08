@@ -47,7 +47,10 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        return view('team', compact('team'));
+        $stadium = $team->stadium;
+        $standings = $team->standings;
+        $players = $team->players;
+        return view('team', compact('team','stadium','standings','players'));
     }
 
     /**

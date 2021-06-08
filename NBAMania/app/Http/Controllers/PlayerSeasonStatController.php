@@ -14,7 +14,8 @@ class PlayerSeasonStatController extends Controller
      */
     public function index()
     {
-        //
+        $playerSeasonStats = PlayerSeasonStat::all();
+        return view('playerSeasonStats', compact('playerSeasonStats'));
     }
 
     /**

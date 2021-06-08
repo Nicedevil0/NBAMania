@@ -19,8 +19,6 @@ class Standing extends Model
         'team_id',
         'id',
         'teams',
-        'cascade',
-        'cascade',
         'Key',
         'City',
         'Name',
@@ -48,4 +46,12 @@ class Standing extends Model
         'ConferenceRank',
         'DivisionRank'
     ];
+
+    public function team(){
+        return $this->belongsTo(Team::class);
+    }
+
+    public function season(){
+        return $this->belongsTo(Season::class);
+    }
 }

@@ -64,4 +64,12 @@ class Player extends Model
         'UsaTodayHeadshotNoBackgroundUpdated',
         'NbaDotComPlayerID',
     ];
+
+    public function seasonStats(){
+        return $this->HasMany(TeamSeasonStat::class);
+    }
+
+    public function team(){
+        return $this->belongsTo(Team::class);
+    }
 }

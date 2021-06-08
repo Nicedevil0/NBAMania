@@ -26,4 +26,8 @@ class Stadium extends Model
         'GeoLat',
         'GeoLong'
     ];
+
+    public function teams(){
+        return $this->hasMany(Team::class);
+    }
 }

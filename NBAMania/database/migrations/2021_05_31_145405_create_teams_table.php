@@ -23,7 +23,7 @@ class CreateTeamsTable extends Migration
             $table->unsignedBigInteger('stadium_id')->nullable();
             $table->foreign('stadium_id')
                 ->references('id')
-                ->on('stadiums')
+                ->on('stadia')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->text('Conference')->nullable();

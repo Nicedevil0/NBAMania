@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Season extends Model
 {
@@ -23,4 +24,16 @@ class Season extends Model
         'SeasonType',
         'ApiSeason'
     ];
+
+    public function standings(){
+        return $this->HasMany(Standing::class);
+    }
+
+    public function playerStats(){
+        return $this->HasMany(PlayerSeasonStat::class);
+    }
+
+    public function teamStats(){
+        return $this->HasMany(TeamSeasonStat::class);
+    }
 }

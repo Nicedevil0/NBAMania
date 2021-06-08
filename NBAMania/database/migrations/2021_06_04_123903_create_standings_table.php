@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateStandingsTable extends Migration
 {
@@ -15,6 +16,11 @@ class CreateStandingsTable extends Migration
     {
         Schema::create('standings', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id')
+                ->references('id')
+                ->on('seasons')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->binary('SeasonType')->nullable();
             $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')

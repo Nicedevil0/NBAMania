@@ -32,4 +32,24 @@ class Team extends Model
         'GlobalTeamID',
         'NbaDotComTeamID'
     ];
+
+    public function stadium(){
+        return $this->belongsTo(Stadium::class);
+    }
+
+    public function standings(){
+        return $this->hasMany(Standing::class);
+    }
+
+    public function players(){
+        return $this->hasMany(Player::class);
+    }
+
+    public function seasonStats(){
+        return $this->HasMany(TeamSeasonStat::class);
+    }
+
+    public function PlayerSeasonStats(){
+        return $this->HasMany(PlayerSeasonStat::class);
+    }
 }
