@@ -32,9 +32,9 @@
                                 Statistiques
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Stats des équipes</a></li>
+                                <li><a class="dropdown-item" href="{{ route('teamstats.index') }}">Stats des équipes</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Stats des joueurs</a></li>
+                                <li><a class="dropdown-item" href="{{ route('playerstats.index') }}">Stats des joueurs</a></li>
                             </ul>
                             </li>
                     </ul>

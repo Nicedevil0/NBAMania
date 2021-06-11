@@ -89,5 +89,4 @@
     </div>
   </div>
 </div>
-<a class="btn btn-warning" href="{{ route('teamstats.show', $team->id) }}">Voir les stats de cette saison</a>
 @endsection

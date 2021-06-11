@@ -14,8 +14,8 @@ class TeamSeasonStatController extends Controller
      */
     public function index()
     {
-        $teamSeasonStats = TeamSeasonStat::all();
-        return view('teamSeasonStats', compact('teamSeasonStats'));
+        $stats = TeamSeasonStat::all();
+        return view('teamStats', compact('stats'));
     }
 
     /**
@@ -47,8 +47,7 @@ class TeamSeasonStatController extends Controller
      */
     public function show(TeamSeasonStat $teamSeasonStat)
     {
-        $team = $teamSeasonStat->team;
-        return view('teamStat', compact('teamSeasonStat','team'));
+        return view('teamStat', compact('teamSeasonStat'));
     }
 
     /**

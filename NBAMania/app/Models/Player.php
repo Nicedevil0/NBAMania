@@ -65,8 +65,8 @@ class Player extends Model
         'NbaDotComPlayerID',
     ];
 
-    public function seasonStats(){
-        return $this->HasMany(TeamSeasonStat::class);
+    public function playerSeasonStats(){
+        return $this->HasMany(PlayerSeasonStat::class);
     }
 
     public function team(){

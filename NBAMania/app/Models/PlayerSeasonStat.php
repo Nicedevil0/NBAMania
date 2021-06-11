@@ -14,7 +14,7 @@ class PlayerSeasonStat extends Model
      *
      * @var array
      */
-    protected $fillable = [
+    /*protected $fillable = [
         'team_id',
         'player_id',
         'SeasonType',
@@ -72,7 +72,7 @@ class PlayerSeasonStat extends Model
         'IsClosed',
         'LineupConfirmed',
         'LineupStatus'
-    ];
+    ];*/
 
     public function season(){
         return $this->belongsTo(Season::class);
@@ -80,6 +80,8 @@ class PlayerSeasonStat extends Model
 
     public function player(){
         return $this->belongsTo(Player::class);
+        //return DB::table('player_season_stats')
+        //    ->select('player')
     }
 
     public function team(){

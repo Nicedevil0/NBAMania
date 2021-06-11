@@ -45,11 +45,11 @@ class Team extends Model
         return $this->hasMany(Player::class);
     }
 
-    public function seasonStats(){
+    public function teamSeasonStats(){
         return $this->HasMany(TeamSeasonStat::class);
     }
 
-    public function PlayerSeasonStats(){
+    public function playerSeasonStats(){
         return $this->HasMany(PlayerSeasonStat::class);
     }
 }
