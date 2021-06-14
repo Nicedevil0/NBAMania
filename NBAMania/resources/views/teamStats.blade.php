@@ -23,7 +23,7 @@
   @foreach($stats as $stat)
     <tr>
       <th scope="row">{{ $stat->id }}</th>
-      <td>{{ $stat->Name }}</td>
+      <td><a href="{{ route('teams.show', $stat->team_id) }}">{{ $stat->Name }}</a></td>
       <td>{{ $stat->Assists }}</td>
       <td>{{ $stat->Steals }}</td>
       <td>{{ $stat->BlockedShots }}</td>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Player;
 use Illuminate\Http\Request;
+use App\Http\Requests\InsertPlayerRequest;
+use App\Models\Team;
 
 class PlayerController extends Controller
 {
@@ -25,7 +27,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        $teams = Team::all();
+        return view('createPlayer',compact('teams'));
     }
 
     /**
@@ -34,9 +37,10 @@ class PlayerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InsertPlayerRequest $request)
     {
-        //
+        Player::create($request->all());
+        return back()->with('info','Le joueur a bien été ajouté');
     }
 
     /**
@@ -58,7 +62,8 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
-        //
+        $teams = Team::all();
+        return view('editPlayer',compact('player','teams'));
     }
 
     /**
@@ -70,7 +75,8 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
-        //
+        $player->update($request->all());
+        return back()->with('info','Le joueur a bien été modifié.');
     }
 
     /**
@@ -81,6 +87,7 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
-        //
+        $player->delete();
+        return back()->with('info','Le joueur a bien été supprimé de la base de données.');
     }
 }

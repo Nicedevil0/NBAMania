@@ -42,6 +42,12 @@
             </div>
         </nav>
         <div class="container mx-auto my-4" style="width:80%">
+            @if(session()->has('info'))
+            <div class="alert alert-warning alert-dismissible fade show">
+                <strong>Info :</strong>{{ session('info') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
         @yield('contenu')
         </div>
         <footer class="bg-dark text-center text-white">

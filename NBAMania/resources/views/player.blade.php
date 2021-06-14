@@ -16,8 +16,8 @@
         <p class="card-text">Statut : {{$player->Status}}</p>
         <p class="card-text">Equipe : {{$player->Team}}</p>
         <p class="card-text">Poste : {{$player->Position}}</p>
-        <p class="card-text">Taille : {{$player->Height}}</p>
-        <p class="card-text">Poids : {{$player->Weight}}</p>
+        <p class="card-text">Taille : {{$player->Height}} pouces</p>
+        <p class="card-text">Poids : {{$player->Weight}} livres</p>
         <p class="card-text">Date de naissance : {{substr($player->BirthDate,0,10)}}</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>

@@ -33,7 +33,7 @@
             </a>
         </div>
         <div class="carousel-item">
-            <a href="https://www.beinsports.com/france/nba/?gr=www">
+            <a href="{{ route('players.index') }}">
                 <img src="images/players.jpg" class="d-block mx-auto">
                 <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0,0,0,0.9);">
                     <h5>Les joueurs</h5>
